@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-canvas text-ink font-sans;
+    font-feature-settings: "cv11", "ss01";
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+  ::selection {
+    background: #ded9fd;
+    color: #2a1f7a;
+  }
+  /* Slim, enterprise scrollbars */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #cfd3e0 transparent;
+  }
+  *::-webkit-scrollbar { width: 8px; height: 8px; }
+  *::-webkit-scrollbar-thumb {
+    background: #cfd3e0;
+    border-radius: 999px;
+  }
+  *::-webkit-scrollbar-thumb:hover { background: #b6bccc; }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-line rounded-xl shadow-card;
+  }
+  .focusable {
+    @apply outline-none ring-offset-2 ring-offset-canvas focus-visible:ring-2 focus-visible:ring-brand/60;
+  }
+  .skeleton {
+    @apply relative overflow-hidden bg-line-soft rounded-md;
+  }
+  .skeleton::after {
+    content: "";
+    @apply absolute inset-0 -translate-x-full animate-shimmer;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  }
+}
+
+/* Recharts: quiet the default focus outline on bars/dots */
+.recharts-wrapper:focus,
+.recharts-surface:focus { outline: none; }

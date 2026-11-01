@@ -1,0 +1,28 @@
+# Node
+node_modules/
+.next/
+out/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Databases
+*.db
+*.sqlite3
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Playwright capture artifacts
+scripts/node_modules/
+demo/raw/
+
+# OS
+.DS_Store
+Thumbs.db

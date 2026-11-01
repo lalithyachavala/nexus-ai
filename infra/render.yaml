@@ -1,0 +1,21 @@
+# Render blueprint for the FastAPI backend.
+# In Render: New → Blueprint → point at this repo. Set the secret env vars
+# (DATABASE_URL, CORS_ORIGINS) in the dashboard after the first deploy.
+services:
+  - type: web
+    name: nexus-ai-api
+    runtime: docker
+    rootDir: apps/api
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: LLM_PROVIDER
+        value: mock
+      # Set these in the Render dashboard (not committed):
+      #   DATABASE_URL  -> your Supabase postgresql+psycopg2://... string
+      #   CORS_ORIGINS  -> your Vercel web URL, e.g. https://nexus-ai.vercel.app
+      - key: DATABASE_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false

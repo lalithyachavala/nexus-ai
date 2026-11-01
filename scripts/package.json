@@ -1,0 +1,12 @@
+{
+  "name": "nexus-ai-capture",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "shots": "node capture-screenshots.mjs",
+    "video": "node capture-video.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.48.2"
+  }
+}
