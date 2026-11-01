@@ -49,6 +49,24 @@ explainable AI pipeline — with human-in-the-loop approval for risky actions.
 🎬 **Walkthrough video:** [`demo/nexus-ai-walkthrough.mp4`](./demo/nexus-ai-walkthrough.mp4)
 (44s, recorded live) · script & storyboard: [`demo/walkthrough.md`](./demo/walkthrough.md)
 
+## Deploy your own
+
+**Fastest — public demo in ~2 minutes (mock mode, no backend/DB):**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/lalithyachavala/nexus-ai&root-directory=apps/web&env=NEXT_PUBLIC_API_MODE&envDescription=Set%20NEXT_PUBLIC_API_MODE%20to%20mock%20for%20a%20zero-backend%20demo)
+
+Click → sign in to **your** Vercel → confirm **Root Directory = `apps/web`** →
+set `NEXT_PUBLIC_API_MODE=mock` → Deploy. The result is a fully interactive
+public URL (chat, charts, approvals all work) with no backend or database.
+
+**Full live stack (Vercel + FastAPI + Postgres):**
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/lalithyachavala/nexus-ai)
+
+Deploys the FastAPI backend (reads `infra/render.yaml`). Then import the repo
+to Vercel in `live` mode. Full runbook — including Supabase + the CORS
+step — in [`DEPLOY.md`](./DEPLOY.md).
+
 ## Architecture
 
 System + AI message-processing sequence diagrams (Mermaid):
