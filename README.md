@@ -1,5 +1,7 @@
 # Nexus AI — Enterprise AI Operations Platform
 
+[![CI](https://github.com/lalithyachavala/nexus-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/lalithyachavala/nexus-ai/actions/workflows/ci.yml)
+
 > **Independent illustrative engineering demonstration.** Nexus AI is an
 > original portfolio artifact built to demonstrate full-stack + AI engineering
 > capability. It is **not** affiliated with, and does not represent, any real
